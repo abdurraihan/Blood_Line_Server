@@ -8,17 +8,11 @@
       }
     ],
     "routes": [
-      {
-        "src": "./",
-        "dest": "server.js"
-      },
+      
       {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/server.js"
       }
-    ],
-    "env": {
-      "MONGODB_CONNECTION_STRING": "mongodb+srv://abdurraihan898:SrFFeQbeGNMhu7GM@cluster0.biindwj.mongodb.net/?retryWrites=true&w=majority"
-    }
+    ]
   }
   
