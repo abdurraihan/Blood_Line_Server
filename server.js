@@ -7,14 +7,14 @@ const app = require("./app");
 const connect = async () =>{
   try {
       await mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
-          console.log("connected to mongoDB");
+          console.log("connected to mongoDB".green.bold);
     } catch (error) {
       throw error;
     }
 };
 
 mongoose.connection.on('disconnected', () => {
-  console.log("mongodb disconnected");
+  console.log(`mongodb disconnected`.red.bold);
 });
 
  

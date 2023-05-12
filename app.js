@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser')
 const cors = require("cors");
 
 const { red } = require("colors");
@@ -8,6 +9,7 @@ const { red } = require("colors");
 //middleware 
 app.use(express.json());
 app.use(cors());
+
 
 // router 
 const donnerRouter = require('./router/donner_router.js');

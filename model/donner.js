@@ -15,7 +15,12 @@ const donnerSchema = mongoose.Schema({
      required: true,
    },
  
-  
+  number:{
+    type:String,
+    required:true,
+    minlength:[11, 'You must hove to provide 11 size phone number'],
+    maxlength:[11, 'You must hove to provide 11 size phone number']
+  },
  
    bloodGroup: {
      type:String,
