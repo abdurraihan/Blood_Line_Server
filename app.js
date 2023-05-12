@@ -13,6 +13,7 @@ app.use(cors());
 
 // router 
 const donnerRouter = require('./router/donner_router.js');
+const bloodSearchRouter = require('./router/bloodSearch_router.js');
 
 
 app.get("/", (req, res) => {
@@ -24,5 +25,7 @@ app.get("/", (req, res) => {
 // posting to database 
 
 app.use('/donner',donnerRouter);
+app.use('/bloodSearch',bloodSearchRouter)
+
 
 module.exports = app;
