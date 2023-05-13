@@ -22,7 +22,7 @@ mongoose.connection.on('disconnected', () => {
 // mongoose.connect(process.env.MONGODB_CONNECTION_STRING ).then(()=>{
 //     console.log('Database connection is successful' .red.bold);
 // })
-
+//server is running
 
 const port = process.env.PORT || 5000;
 
