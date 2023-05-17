@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const donnerSchema = mongoose.Schema({
    name:{
      type: String,
+     unique:true ,
      required:[true, "please provide a name for this product."],
      
    },
