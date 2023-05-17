@@ -32,9 +32,14 @@ const donnerSchema = mongoose.Schema({
      }
    },
  
+   
+  imageURL: {
+    type: String,
+    required: true
+  },
 
     lastBloodDonationDate:{
-    required:true,
+   // required:true,
      type:String,
     
    } ,
