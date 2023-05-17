@@ -11,7 +11,6 @@ const donnerSchema = mongoose.Schema({
  
    email: {
      type: String,
-     unique: true,
      required: true,
    },
  
@@ -25,7 +24,6 @@ const donnerSchema = mongoose.Schema({
    bloodGroup: {
      type:String,
      required:true,
-   
      enum:{
        values:['A+', 'A-' , 'B+' , 'B-' , 'O+' , 'O-' , 'AB+' , 'AB-'],
        message: "unit value can't be {VALUE} , mast be A+/A-/B+/B-/O+/O-/AB+/AB-"
@@ -39,7 +37,7 @@ const donnerSchema = mongoose.Schema({
   },
 
     lastBloodDonationDate:{
-   // required:true,
+  //  required:true,
      type:String,
     
    } ,

@@ -5,7 +5,6 @@ exports.createDonner = async (req, res , next) => {
     try {  
 
       const Data = req.body;
-  
       const result = await Donner.create(Data)
         ;
   
