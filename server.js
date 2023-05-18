@@ -24,7 +24,7 @@ mongoose.connection.on('disconnected', () => {
 // })
 //server is running
 
-const port = process.env.PORT || 50000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   connect(); // This is for connect database 
