@@ -6,7 +6,7 @@ bloodSearchRouter.route('/all')
     .get(bloodSearch_controller.getAllDonner)
 
 bloodSearchRouter.route('/')
-    .get(bloodSearch_controller.get_single_blood_group)
+    .get(bloodSearch_controller.getSingleBloodGroup)
 
 
 

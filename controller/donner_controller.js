@@ -84,3 +84,24 @@ exports.deleteDonner = async (req, res, next) => {
       })
     }
   }
+
+exports.getDonnerByEmail = async (req, res, next) => {
+    try {
+      
+      const { email } = req.params;
+      const donor = await Donner.findOne({ email:email });
+
+       res.status(200).json({
+          status: "successful",
+          data : donor,
+      })
+     
+  
+    } catch (error) {
+      res.status(400).json({
+        status: 'fail',
+        message: "Donner can't found ",
+        error: error.message
+      })
+    }
+  }

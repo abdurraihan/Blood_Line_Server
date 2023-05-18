@@ -8,11 +8,13 @@ exports.getAllDonner = async (req, res , next) => {
      const limit = Number(req.query.limit) || 10;
      const skip = (page - 1) * limit
     
+     const count = await Donner.find().countDocuments();
      const result = await Donner.find().skip(skip).limit(limit);
     
   
       res.status(200).json({
         status: 'success',
+        count : count , 
         data: result
       })
   
@@ -28,7 +30,7 @@ exports.getAllDonner = async (req, res , next) => {
 
 
 
-exports.get_single_blood_group = async (req, res , next) => {
+exports.getSingleBloodGroup = async (req, res , next) => {
 
     try {  
     
@@ -42,19 +44,21 @@ exports.get_single_blood_group = async (req, res , next) => {
 // For_plus_sign == %2B 
 // example For O+ == O%2B 
 // example For O- == O- 
-    
+
+const count = await Donner.find().countDocuments();
 const result =  await Donner.find({bloodGroup:`${group}`}).skip(skip).limit(limit)
 
 
       res.status(200).json({
         status: 'success',
+        count: count,
         data: result
       })
   
     } catch (error) {
       res.status(400).json({
         status: 'fail',
-        message: 'blood all searching fail',
+        message: 'blood searching fail',
         error: error.message
       })
     }

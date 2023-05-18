@@ -16,5 +16,9 @@ donnerRouter.route("/delete/:email")
     .delete(donnerController.deleteDonner)
 
 
+donnerRouter.route("/singleDonor/:email")
+    .get(donnerController.getDonnerByEmail)
+
+
 
 module.exports =donnerRouter; 
