@@ -91,10 +91,17 @@ exports.getDonnerByEmail = async (req, res, next) => {
       const { email } = req.params;
       const donor = await Donner.findOne({ email:email });
 
-       res.status(200).json({
+      if(donor){
+        res.status(200).json({
           status: "successful",
           data : donor,
-      })
+       })
+      }else{
+        res.status(400).json({
+          status: "fail",
+          message: "Donner not found",
+        })
+      }
      
   
     } catch (error) {
