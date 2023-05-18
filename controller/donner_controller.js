@@ -58,21 +58,12 @@ exports.createDonner = async (req, res , next) => {
   }
   
 
-  exports.deleteDonner = async (req,res,next) => {
-
-    const result = await Product.deleteOne({ _id: id });
-
-    return result;
-}
-
-
-
 
 exports.deleteDonner = async (req, res, next) => {
     try {
-  
+      
       const { email } = req.params;
-  
+    
       const result = await Donner.deleteOne({ email:email });
 
   

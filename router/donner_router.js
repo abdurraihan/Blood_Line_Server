@@ -10,6 +10,9 @@ donnerRouter.route("/create")
 // This route is for <Update> and <Delete> donner
 donnerRouter.route("/update/:email")
     .put(donnerController.updateDonner)
+   
+
+donnerRouter.route("/delete/:email")
     .delete(donnerController.deleteDonner)
 
 
