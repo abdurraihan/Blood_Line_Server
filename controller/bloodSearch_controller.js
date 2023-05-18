@@ -52,9 +52,14 @@ const result =  await Donner.find({bloodGroup:`${group}`}).skip(skip).limit(limi
         
       res.status(200).json({
         status: 'success',
-        count: count,
         data: result
       })
+
+      }else{
+        res.status(200).json({
+          status: 'fail',
+          data: "there is no donor by email "
+        })
       }
   
     } catch (error) {
