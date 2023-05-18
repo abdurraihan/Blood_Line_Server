@@ -45,7 +45,7 @@ exports.getSingleBloodGroup = async (req, res , next) => {
 // example For O+ == O%2B 
 // example For O- == O- 
 
-const count = await Donner.find().countDocuments();
+const count = await Donner.find({bloodGroup:`${group}`}).countDocuments();
 const result =  await Donner.find({bloodGroup:`${group}`}).skip(skip).limit(limit)
 
       if(result){
