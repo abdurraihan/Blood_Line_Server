@@ -64,14 +64,20 @@ exports.deleteDonner = async (req, res, next) => {
     try {
       
       const { email } = req.params;
-    
+    console.log(email);
       const result = await Donner.deleteOne({ email:email });
-
+      console.log(result);
   
-      if (result.acknowledged) {
+      if (result.acknowledged && result.deletedCount) {
         res.status(200).json({
           status: "successful",
           message: "deleted Donner"
+        })
+      }else{
+        res.status(400).json({
+          status: 'fail',
+          message: 'Donner Delete fail',
+          error: error.message
         })
       }
   
@@ -84,6 +90,8 @@ exports.deleteDonner = async (req, res, next) => {
       })
     }
   }
+
+
 
 exports.getDonnerByEmail = async (req, res, next) => {
     try {
