@@ -98,7 +98,7 @@ exports.getDonnerByEmail = async (req, res, next) => {
       
       const { email } = req.params;
       const donor = await Donner.findOne({ email:email });
-
+      console.log(donor);
       if(donor){
         res.status(200).json({
           status: "successful",
