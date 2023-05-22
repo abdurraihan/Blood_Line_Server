@@ -39,9 +39,12 @@ const donnerSchema = mongoose.Schema({
     required: true
   },
 
-    lastBloodDonationDate:{
-   // required:true,
+    isAbleToDonateBlood:{
      type:String,
+     enum:{
+      values:['Yes' , 'No'],
+      message: "unit value can't be {VALUE} , it mast be Yes or No"
+    }
     
    } ,
  
@@ -49,11 +52,12 @@ const donnerSchema = mongoose.Schema({
         type:String,
         required:true,
         enum:{
-            values:['Feni', 'Dhaka' , 'Chattogram' ],
-            message: "unit value can't be {VALUE} , mast be Feni/Dhaka/Chattogram"
+            values:['Feni', 'Daganbhuiyan' , 'Chhagalnaiya' , 'Sonagazi' , 'Parshuram', 'Fulgazi'],
+            message: "unit value can't be {VALUE} ,it must have to be  Feni/Daganbhuiyan/Chhagalnaiya/Sonagazi/Parshuram/Fulgazi"
           }
    }
    
+  
  
  },{
    timestamps:true
