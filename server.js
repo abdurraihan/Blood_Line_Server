@@ -17,16 +17,11 @@ mongoose.connection.on('disconnected', () => {
   console.log(`mongodb disconnected`.red.bold);
 });
 
- 
-// // database connection
-// mongoose.connect(process.env.MONGODB_CONNECTION_STRING ).then(()=>{
-//     console.log('Database connection is successful' .red.bold);
-// })
-//server is running
+
 
 const port = process.env.PORT || 50000;
 
 app.listen(port, () => {
-  connect(); // This is for connect database 
+  connect(); 
   console.log(`App is running on port ${port}`.yellow.bold);
 }); 

@@ -29,8 +29,8 @@ exports.createDonner = async (req, res , next) => {
 
   exports.updateDonner = async (req, res, next) => {
     try {
-      const  {email} = await req.params;
-      const data = await req.body;
+      const {email}=  req.params;
+      const data =  req.body;
       
      
       
@@ -64,7 +64,7 @@ exports.deleteDonner = async (req, res, next) => {
     try {
       
       const { email } = req.params;
-    console.log(email);
+  
       const result = await Donner.deleteOne({ email:email });
       console.log(result);
   
@@ -98,7 +98,7 @@ exports.getDonnerByEmail = async (req, res, next) => {
       
       const { email } = req.params;
       const donor = await Donner.findOne({ email:email });
-      console.log(donor);
+     
       if(donor){
         res.status(200).json({
           status: "successful",

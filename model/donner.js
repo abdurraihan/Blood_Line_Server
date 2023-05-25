@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-// Schema design 
+
 const donnerSchema = mongoose.Schema({
    name:{
      type: String,
@@ -12,7 +12,6 @@ const donnerSchema = mongoose.Schema({
  
    email: {
      type: String,
-     //unique: true,
      required: true,
    },
  
